@@ -1,27 +1,27 @@
-import java.util.Scanner; // Import the Scanner class for user input
+public class Main {
 
-public class SampleProgram {
-    public static void main(String[] args) {
-        // Create a Scanner object to read input
-        Scanner scanner = new Scanner(System.in);
+  public static void main(String[] args) {
 
-        // Print a welcome message
-        System.out.println("Welcome to the Java Sample Program!");
+    int num = 29;
+    boolean flag = false;
 
-        // Ask the user for two numbers
-        System.out.print("Enter the first number: ");
-        int num1 = scanner.nextInt();
-
-        System.out.print("Enter the second number: ");
-        int num2 = scanner.nextInt();
-
-        // Perform addition
-        int sum = num1 + num2;
-
-        // Display the result
-        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
-
-        // Close the scanner
-        scanner.close();
+    // 0 and 1 are not prime numbers
+    if (num == 0 || num == 1) {
+        flag = true;
     }
+
+    for (int i = 2; i <= num / 2; ++i) {
+
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
 }
